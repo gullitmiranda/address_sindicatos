@@ -3,7 +3,7 @@
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
-  <name>example_addressbook</name>
+  <name>address_sindicatos</name>
   <channel>pear.roundcube.net</channel>
   <summary>Example addressbook plugin implementation</summary>
   <description>Sample plugin to add a new address book with just a static list of contacts.</description>
