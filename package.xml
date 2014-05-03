@@ -26,11 +26,11 @@
   <notes>-</notes>
   <contents>
     <dir baseinstalldir="/" name="/">
-      <file name="example_addressbook.php" role="php">
+      <file name="address_sindicatos.php" role="php">
         <tasks:replace from="@name@" to="name" type="package-info"/>
         <tasks:replace from="@package_version@" to="version" type="package-info"/>
       </file>
-      <file name="example_addressbook_backend.php" role="php">
+      <file name="address_sindicatos_backend.php" role="php">
         <tasks:replace from="@name@" to="name" type="package-info"/>
         <tasks:replace from="@package_version@" to="version" type="package-info"/>
       </file>
