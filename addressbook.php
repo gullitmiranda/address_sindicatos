@@ -8,8 +8,8 @@ require_once(dirname(__FILE__) . '/addressbook_backend.php');
  */
 class addressbook extends rcube_plugin
 {
-  private $abook_id = 'General';
-  private $abook_name = 'Lista Global';
+  private $abook_id = 'Addressbook';
+  private $abook_name = 'AddressBook';
 
   public function init()
   {
