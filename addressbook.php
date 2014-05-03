@@ -1,15 +1,15 @@
 <?php
 
-require_once(dirname(__FILE__) . '/address_sindicatos_backend.php');
+require_once(dirname(__FILE__) . '/addressbook_backend.php');
 
 /**
  * Sample plugin to add a new address book
  * with just a static list of contacts
  */
-class address_sindicatos extends rcube_plugin
+class addressbook extends rcube_plugin
 {
-  private $abook_id = 'Sindicatos';
-  private $abook_name = 'Lista de Sindicatos';
+  private $abook_id = 'General';
+  private $abook_name = 'Lista Global';
 
   public function init()
   {
@@ -28,7 +28,7 @@ class address_sindicatos extends rcube_plugin
 
   public function address_sources($p)
   {
-    $abook = new address_sindicatos_backend($this->abook_name);
+    $abook = new addressbook_backend($this->abook_name);
     $p['sources'][$this->abook_id] = array(
       'id' => $this->abook_id,
       'name' => $this->abook_name,
@@ -41,7 +41,7 @@ class address_sindicatos extends rcube_plugin
   public function get_address_book($p)
   {
     if ($p['id'] === $this->abook_id) {
-      $p['instance'] = new address_sindicatos_backend($this->abook_name);
+      $p['instance'] = new addressbook_backend($this->abook_name);
     }
 
     return $p;

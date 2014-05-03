@@ -7,11 +7,11 @@
  *
  * @author Thomas Bruederli
  */
-class address_sindicatos_backend extends rcube_addressbook
+class addressbook_backend extends rcube_addressbook
 {
   public $primary_key = 'ID';
   public $readonly = true;
-  public $groups = false;
+  public $groups = true;
 
   private $filter;
   private $result;
@@ -47,8 +47,8 @@ class address_sindicatos_backend extends rcube_addressbook
   function list_groups($search = null)
   {
     return array(
-      array('ID' => 'testgroup1', 'name' => "Testgroup"),
-      array('ID' => 'testgroup2', 'name' => "Sample Group"),
+      array('ID' => 'testgroup1', 'name' => "Sindicatos"),
+      array('ID' => 'testgroup2', 'name' => "Other"),
     );
   }
 
