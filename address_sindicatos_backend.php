@@ -57,8 +57,9 @@ class address_sindicatos_backend extends rcube_addressbook
   public function list_records($cols=null, $subset=2)
   {
      $this->result = $this->count();
-     $this->result->add(array('ID' => '111', 'name' => "Example Contact", 'firstname' => "Example", 'surname' => "Contact", 'email' => "example@roundcube.net"));
+     // $this->result->add(array('ID' => '111', 'name' => "Example Contact", 'firstname' => "Example", 'surname' => "Contact", 'email' => "example@roundcube.net"));
      $this->result->add(array('ID' => '112', 'name' => "Paulo Barreto", 'firstname' => "Paulo", 'surname' => "Barreto", 'email' => "xuxa@roundcube.net"));
+     $this->result->add(array('ID' => '113', 'name' => "Gullit Miranda", 'firstname' => "Gullit", 'surname' => "Miranda", 'email' => "gm@roundcube.net"));
 
      return $this->result;
   }
