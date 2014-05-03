@@ -8,7 +8,7 @@ require_once(dirname(__FILE__) . '/address_sindicatos_backend.php');
  */
 class address_sindicatos extends rcube_plugin
 {
-  private $abook_id = 'Sindicatos';
+  private $abook_id = '1001';
   private $abook_name = 'Lista de Sindicatos';
 
   public function init()

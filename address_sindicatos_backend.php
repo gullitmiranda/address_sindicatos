@@ -47,8 +47,8 @@ class address_sindicatos_backend extends rcube_addressbook
   function list_groups($search = null)
   {
     return array(
-      array('ID' => 'testgroup1', 'name' => "Testgroup"),
-      array('ID' => 'testgroup2', 'name' => "Sample Group"),
+      array('ID' => '1011', 'name' => "Testgroup"),
+      array('ID' => '1012', 'name' => "Sample Group"),
     );
   }
 
