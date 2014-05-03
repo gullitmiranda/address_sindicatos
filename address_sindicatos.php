@@ -13,16 +13,18 @@ class address_sindicatos extends rcube_plugin
 
   public function init()
   {
+    // Get Roundcube Instance
+    $rcmail = rcube::get_instance();
+
     $this->add_hook('addressbooks_list', array($this, 'address_sources'));
     $this->add_hook('addressbook_get', array($this, 'get_address_book'));
 
     // use this address book for autocompletion queries
     // (maybe this should be configurable by the user?)
-    $config = rcmail::get_instance()->config;
-    $sources = (array) $config->get('autocomplete_addressbooks', array('sql'));
+    $sources = (array) $rcmail->config->get('autocomplete_addressbooks', array('sql'));
     if (!in_array($this->abook_id, $sources)) {
       $sources[] = $this->abook_id;
-      $config->set('autocomplete_addressbooks', $sources);
+      $rcmail->config->set('autocomplete_addressbooks', $sources);
     }
   }
 
