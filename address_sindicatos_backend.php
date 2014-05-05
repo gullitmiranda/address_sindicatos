@@ -11,7 +11,7 @@ class address_sindicatos_backend extends rcube_addressbook
 {
   public $primary_key = 'ID';
   public $readonly = true;
-  public $groups = true;
+  public $groups = false;
 
   private $filter;
   private $result;
@@ -47,16 +47,51 @@ class address_sindicatos_backend extends rcube_addressbook
   function list_groups($search = null)
   {
     return array(
-      array('ID' => 'testgroup1', 'name' => "Testgroup"),
-      array('ID' => 'testgroup2', 'name' => "Sample Group"),
+      // array('ID' => 'S1', 'name' => "Sindicato 1"),
+      // array('ID' => 'S2', 'name' => "Sindicato 2"),
+      // array('ID' => 'S3', 'name' => "Sindicato 3"),
+      // array('ID' => 'S4', 'name' => "Sindicato 4"),
+      // array('ID' => 'S5', 'name' => "Sindicato 5"),
     );
   }
+
+/*
+  function list_groups($search = null)
+  {
+    $username = $this->RCMAIL->user->data["username"];
+
+    $groups = array(
+      array('ID' => 'S1', 'name' => "Sindicato 1", "only" => array("admin@requestdev.com.br")),
+      array('ID' => 'S2', 'name' => "Sindicato 2", "only" => array("contact@requestdev.com.br")),
+      array('ID' => 'S3', 'name' => "Sindicato 3", "only" => array("admin@requestdev.com.br")),
+      array('ID' => 'S4', 'name' => "Sindicato 4"),
+      array('ID' => 'S5', 'name' => "Sindicato 5"),
+    );
+
+    $user_groups = array();
+    foreach ($groups as $group) {
+      $only = $group["only"];
+      unset($group["only"]);
+
+      if ($only && count($only)) {
+        if (in_array($username, $only)) {
+          $user_groups[] = $group;
+        }
+      } else {
+        $user_groups[] = $group;
+      }
+    }
+
+    return $user_groups;
+  }
+*/
 
   public function list_records($cols=null, $subset=0)
   {
     $this->result = $this->count();
     $this->result->add(array('ID' => '111', 'name' => "Example Contact", 'firstname' => "Example", 'surname' => "Contact", 'email' => "example@roundcube.net"));
     $this->result->add(array('ID' => '112', 'name' => "Example Contact 2", 'firstname' => "Example", 'surname' => "Contact 2", 'email' => "example2@roundcube.net"));
+    $this->result->add(array('ID' => '113', 'name' => "Example Contact 3", 'firstname' => "Example", 'surname' => "Contact 3", 'email' => "example3@roundcube.net"));
 
     return $this->result;
   }

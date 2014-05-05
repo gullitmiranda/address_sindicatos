@@ -14,8 +14,20 @@ class address_sindicatos extends rcube_plugin
   private $abook_id = 'sindicatos';
   private $abook_name = 'Lista de Sindicatos';
 
+  // Todos os usuários que estiverem nessa lista terão acesso a lista
+  // Para dar permissão para todos usuários basta deixar a lista vazia:
+  //    private $only = array();
+  private $only = array("admin@requestdev.com.br", "contact@requestdev.com.br");
+
   public function init()
   {
+    $user = rcmail::get_instance()->user;
+    $username = $user->data["username"];
+
+    if ($this->only && count($this->only) && !in_array($username, $this->only)) {
+      return;
+    }
+
     $this->add_hook('addressbooks_list', array($this, 'address_sources'));
     $this->add_hook('addressbook_get', array($this, 'get_address_book'));
 
