@@ -1,4 +1,4 @@
-### Lista de endereços estática com filtro de usuários
+### Lista de endereços estática com filtro de usuários Para o Roundcube
 
 #### Duplicando a lista:
 
@@ -12,3 +12,14 @@ Ex: Para criar uma lista de endereço de funcionarios de uma certa prefeitura
 4. Dentro de todos os arquivos procure todas as ocorrencias de `address_sindicatos` subistindo por `address_prefeitura`
 5. Renomei o arqivo `tests/AddressSindicatos.php` para `tests/AddressPrefeitura.php`
 6. Renomei a classe do arquivo `tests/AddressPrefeitura.php` para `AddressPrefeitura_Plugin`
+7. Agora entre no arquivo `config/config.inc.php` (no diretório de instalação do Roundcube) e adicione o novo plugin a lista a ser carregada:
+
+```php
+  // De:
+    $config['plugins'] = array("address_sindicatos");
+  // Para:
+    $config['plugins'] = array("address_sindicatos", "address_prefeitura");
+```
+
+  Obs.: Se exister mais plugins configurados para serem carregado no Roundcube essa lista irá ser diferente.
+
