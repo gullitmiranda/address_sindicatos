@@ -11,7 +11,7 @@ class address_sindicatos_backend extends rcube_addressbook
 {
   public $primary_key = 'ID';
   public $readonly = true;
-  public $groups = false;
+  public $groups = true;
 
   private $filter;
   private $result;
@@ -47,22 +47,18 @@ class address_sindicatos_backend extends rcube_addressbook
   function list_groups($search = null)
   {
     return array(
-      array('ID' => '1011', 'name' => "Testgroup"),
-      array('ID' => '1012', 'name' => "Sample Group"),
+      array('ID' => 'testgroup1', 'name' => "Testgroup"),
+      array('ID' => 'testgroup2', 'name' => "Sample Group"),
     );
   }
 
-
-
-  public function list_records($cols=null, $subset=2)
+  public function list_records($cols=null, $subset=0)
   {
-     $this->result = $this->count();
-     // $this->result->add(array('ID' => '111', 'name' => "Example Contact", 'firstname' => "Example", 'surname' => "Contact", 'email' => "example@roundcube.net"));
-     $this->result->add(array('ID' => '112', 'name' => "Paulo Barreto", 'firstname' => "Paulo", 'surname' => "Barreto", 'email' => "xuxa@roundcube.net"));
-     $this->result->add(array('ID' => '113', 'name' => "Gullit Miranda", 'firstname' => "Gullit", 'surname' => "Miranda", 'email' => "gm@roundcube.net"));
-     $this->result->add(array('ID' => '114', 'name' => "Fulano", 'firstname' => "Fulano", 'surname' => "Beltrano", 'email' => "fulano@roundcube.net"));
+    $this->result = $this->count();
+    $this->result->add(array('ID' => '111', 'name' => "Example Contact", 'firstname' => "Example", 'surname' => "Contact", 'email' => "example@roundcube.net"));
+    $this->result->add(array('ID' => '112', 'name' => "Example Contact 2", 'firstname' => "Example", 'surname' => "Contact 2", 'email' => "example2@roundcube.net"));
 
-     return $this->result;
+    return $this->result;
   }
 
   public function search($fields, $value, $strict=false, $select=true, $nocount=false, $required=array())
