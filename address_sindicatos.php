@@ -17,7 +17,7 @@ class address_sindicatos extends rcube_plugin
   // Todos os usuários que estiverem nessa lista terão acesso a lista
   // Para dar permissão para todos usuários basta deixar a lista vazia:
   //    private $only = array();
-  private $only = array("admin@requestdev.com.br", "contact@requestdev.com.br");
+  private $only = array("audi@faespsenar.com.br");
 
   public function init()
   {
